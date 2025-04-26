@@ -22,7 +22,7 @@ const EditStudent = () => {
     const fetchStudent = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/students/${id}`
+          `https://student-management-website-backend.onrender.com/api/students/${id}`
         );
         setFormData({
           name: response.data.name,
@@ -51,7 +51,7 @@ const EditStudent = () => {
     e.preventDefault();
 
     try {
-      await axios.put(`http://localhost:5000/api/students/${id}`, formData);
+      await axios.put(`https://student-management-website-backend.onrender.com/api/students/${id}`, formData);
       toast.success("Student updated successfully");
       navigate("/students");
     } catch (error) {
